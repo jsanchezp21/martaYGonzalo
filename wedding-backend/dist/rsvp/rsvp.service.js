@@ -22,6 +22,22 @@ let RsvpService = class RsvpService {
         this.model = model;
     }
     create(dto) { return this.model.create(dto); }
+    findAll() { return this.model.find().sort({ createdAt: -1 }).lean(); }
+    remove(id) { return this.model.findByIdAndDelete(id); }
+    findAllFiltered(f) {
+        const where = {};
+        if (typeof f.attending === 'boolean')
+            where.attending = f.attending;
+        if (typeof f.dietaryRestrictions === 'boolean')
+            where.dietaryRestrictions = f.dietaryRestrictions;
+        if (f.bus)
+            where.bus = f.bus;
+        if (f.q) {
+            const re = new RegExp(f.q.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+            where.$or = [{ firstName: re }, { lastName: re }, { email: re }];
+        }
+        return this.model.find(where).sort({ createdAt: -1 }).lean();
+    }
 };
 exports.RsvpService = RsvpService;
 exports.RsvpService = RsvpService = __decorate([

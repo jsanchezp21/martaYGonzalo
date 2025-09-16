@@ -1,0 +1,11 @@
+MONGODB_URI=mongodb://127.0.0.1:27017/wedding
+MONGODB_DB=wedding
+PORT=3000
+CORS_ORIGIN=http://localhost:4200
+ADMIN_SECRET=martaygonzalo*1
+
+# Admin login
+ADMIN_USER=admin
+ADMIN_PASS=Betadine1            # cámbialo por uno fuerte
+JWT_SECRET=SuperBetadine1    # cambia esto por uno fuerte
+JWT_EXPIRES=7d                 # por ej. 7d, 12h, 1h...

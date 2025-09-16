@@ -12,14 +12,19 @@ const mongoose_1 = require("@nestjs/mongoose");
 const rsvp_controller_1 = require("./rsvp.controller");
 const rsvp_service_1 = require("./rsvp.service");
 const rsvp_schema_1 = require("./rsvp.schema");
+const auth_module_1 = require("../auth/auth.module"); // <-- importa el módulo de auth
+const jwt_guard_1 = require("../auth/jwt.guard"); // <-- importa el guard
 let RsvpModule = class RsvpModule {
 };
 exports.RsvpModule = RsvpModule;
 exports.RsvpModule = RsvpModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: rsvp_schema_1.Rsvp.name, schema: rsvp_schema_1.RsvpSchema }])],
+        imports: [
+            mongoose_1.MongooseModule.forFeature([{ name: rsvp_schema_1.Rsvp.name, schema: rsvp_schema_1.RsvpSchema }]),
+            auth_module_1.AuthModule, // <-- añade aquí
+        ],
         controllers: [rsvp_controller_1.RsvpController],
-        providers: [rsvp_service_1.RsvpService]
+        providers: [rsvp_service_1.RsvpService, jwt_guard_1.JwtAuthGuard], // <-- registra el guard aquí
     })
 ], RsvpModule);
 //# sourceMappingURL=rsvp.module.js.map

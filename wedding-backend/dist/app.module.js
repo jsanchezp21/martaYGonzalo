@@ -12,6 +12,7 @@ const config_1 = require("@nestjs/config");
 const mongoose_1 = require("@nestjs/mongoose");
 const health_controller_1 = require("./health.controller");
 const rsvp_module_1 = require("./rsvp/rsvp.module");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -26,6 +27,7 @@ exports.AppModule = AppModule = __decorate([
                     dbName: cfg.get('MONGODB_DB') || undefined
                 })
             }),
+            auth_module_1.AuthModule,
             rsvp_module_1.RsvpModule
         ],
         controllers: [health_controller_1.HealthController]

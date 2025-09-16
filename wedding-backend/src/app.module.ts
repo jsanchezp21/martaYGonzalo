@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { HealthController } from './health.controller';
 import { RsvpModule } from './rsvp/rsvp.module';
+import { AuthModule } from './auth/auth.module'; 
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { RsvpModule } from './rsvp/rsvp.module';
         dbName: cfg.get<string>('MONGODB_DB') || undefined
       })
     }),
+	AuthModule,
     RsvpModule
   ],
   controllers: [HealthController]

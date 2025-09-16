@@ -27,6 +27,14 @@ type Bus = 'ida'|'ida_vuelta'|'ninguno';
           <div class="gold-line mt-3"></div>
         </div>
       </div>
+	  <!-- BOTÓN CONFIRMAR EN HERO (nuevo) -->
+<div class="absolute inset-x-0 bottom-6 flex justify-center">
+  <button class="btn btn-primary text-sm px-4 py-2 shadow-lg shadow-black/20"
+          (click)="open=true">
+    Confirmar asistencia
+  </button>
+</div>
+
     </section>
 
     <main class="container space-y-12 py-12">
@@ -65,7 +73,16 @@ type Bus = 'ida'|'ida_vuelta'|'ninguno';
           <p class="text-grayText mb-4">Confírmanos tu asistencia para poder organizarlo todo con cariño <span class="text-greenSoft">💚</span></p>
           <div class="flex flex-wrap gap-3">
             <button class="btn btn-primary" (click)="open=true">Confirmar asistencia</button>
-            <a class="btn btn-outline" [href]="calendarUrl" target="_blank" rel="noopener">Añadir al calendario</a>
+              <a class="btn btn-outline" [href]="calendarUrl" target="_blank" rel="noopener">
+    <!-- Icono "G" de Google -->
+    <svg class="w-5 h-5" viewBox="0 0 48 48" aria-hidden="true">
+      <path fill="#EA4335" d="M24 9.5c3.5 0 6.7 1.2 9.2 3.5l6.2-6.2C35.3 2.7 29.9 0.5 24 0.5 14.6 0.5 6.5 5.9 2.5 13.4l7.6 5.9C12 13.5 17.5 9.5 24 9.5z"/>
+      <path fill="#4285F4" d="M46.5 24.5c0-1.5-.1-2.9-.4-4.3H24v8.1h12.6c-.5 2.6-2.1 4.8-4.4 6.3l6.8 5.3c4-3.7 6.5-9.1 6.5-15.4z"/>
+      <path fill="#FBBC05" d="M10.1 19.3l-7.6-5.9C.9 16 0 19.9 0 24c0 4 1 7.8 2.8 11.1l7.6-5.9C9.6 27.1 9 25.6 9 24s.6-3.1 1.1-4.7z"/>
+      <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.8-5.8l-6.8-5.3c-1.9 1.3-4.4 2.1-9 2.1-6.5 0-12-4-13.9-9.5l-7.6 5.9C6.5 42.1 14.6 48 24 48z"/>
+    </svg>
+    Añadir al calendario
+  </a>
           </div>
         </div>
 

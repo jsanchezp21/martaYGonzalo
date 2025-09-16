@@ -1,0 +1,12 @@
+# Node / Angular / Nest
+node_modules/
+dist/
+
+# Env files
+.env
+*.env
+wedding-backend/.env
+
+# OS
+.DS_Store
+Thumbs.db
