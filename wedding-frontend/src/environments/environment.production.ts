@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiBase: 'https://martaygonzalo.onrender.com/api',
+  apiBase: 'https://martaygonzalo.onrender.com/api', // ← IMPORTANTE
   wedding: {
     couple: 'Gonzalo & Marta',
     dateISO: '2026-05-15T12:00:00+02:00',
